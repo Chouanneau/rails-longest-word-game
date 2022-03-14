@@ -1,0 +1,14 @@
+<h2>This is the GAME</h2>
+
+<p><%= @letters %></p>
+
+
+
+<h2>Put your word</h2>
+
+<form action="/score", method="post">
+  <input type="text" name="word">
+  <input type="submit" value="Go!">
+  <input type="hidden" value="<%= @letters %>">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
